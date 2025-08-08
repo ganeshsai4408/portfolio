@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
-import profileImage from "@/assets/profile-image.jpg";
 
 const HeroSection = () => {
   return (
@@ -44,7 +43,7 @@ const HeroSection = () => {
             <div className="relative">
               <div className="w-72 h-72 md:w-80 md:h-80 rounded-3xl overflow-hidden hero-glow">
                 <img
-                  src={profileImage}
+                  src="/lovable-uploads/ce0ed499-fb4d-49fb-b924-79355b625649.png"
                   alt="Ganesh Sai Bendre"
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
