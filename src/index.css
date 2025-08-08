@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,35 +10,49 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Dark portfolio theme */
+    --background: 225 9% 6%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 225 9% 8%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 225 9% 8%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 262 83% 65%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 225 9% 12%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 225 9% 12%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 225 9% 15%;
+    --input: 225 9% 15%;
+    --ring: 262 83% 65%;
 
-    --radius: 0.5rem;
+    /* Custom portfolio tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(262 83% 65% / 0.8), hsl(217 91% 60% / 0.8));
+    --card-gradient: linear-gradient(135deg, hsl(225 9% 8% / 0.9), hsl(225 9% 12% / 0.9));
+    --accent-gradient: linear-gradient(135deg, hsl(262 83% 65%), hsl(217 91% 60%));
+    --text-gradient: linear-gradient(135deg, hsl(262 83% 75%), hsl(217 91% 70%));
+    
+    --shadow-subtle: 0 4px 6px -1px hsl(225 9% 4% / 0.3);
+    --shadow-card: 0 10px 25px -3px hsl(225 9% 4% / 0.4);
+    --shadow-glow: 0 0 40px hsl(262 83% 65% / 0.3);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +116,31 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+  }
+
+  .gradient-text {
+    background: var(--text-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-glow {
+    filter: drop-shadow(var(--shadow-glow));
+  }
+}
+
+@layer components {
+  .portfolio-card {
+    @apply bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 shadow-[var(--shadow-card)] transition-[var(--transition-smooth)] hover:bg-card/70 hover:border-primary/30 hover:shadow-[var(--shadow-glow)];
+  }
+
+  .skill-badge {
+    @apply bg-secondary/80 text-secondary-foreground px-4 py-2 rounded-full text-sm font-medium border border-border/30 transition-[var(--transition-smooth)] hover:bg-primary/20 hover:border-primary/50 hover:text-primary-foreground;
+  }
+
+  .gradient-button {
+    @apply bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold px-8 py-3 rounded-xl shadow-[var(--shadow-card)] transition-[var(--transition-bounce)] hover:scale-105 hover:shadow-[var(--shadow-glow)] active:scale-95;
   }
 }
