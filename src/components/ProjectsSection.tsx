@@ -16,12 +16,7 @@ const projects: Project[] = [
     github: "https://github.com/ganeshsai4408/sign-language-recognition",
     tech: ["TensorFlow", "OpenCV", "Python", "MediaPipe"]
   },
-  {
-    title: "Slack Clone",
-    description: "React + Firebase powered real-time chat application with authentication and modern UI",
-    github: "https://github.com/ganeshsai4408",
-    tech: ["React.js", "Firebase", "Authentication", "Real-time"]
-  },
+  
   {
     title: "Notes App",
     description: "React.js notes application with lightning-fast 1-second search and local storage persistence",
@@ -39,7 +34,23 @@ const projects: Project[] = [
     description: "Node.js Discord bot powered by OpenAI for intelligent study planning and educational assistance",
     live: "https://gen-bot-web.vercel.app/",
     tech: ["Node.js", "OpenAI", "Discord API", "AI Integration"]
-  }
+  },
+  {
+    title: "Responsive Food Ordering Web App",
+    description: "A clean, responsive food ordering web application that lets users explore meals, customize selections, add items to cart, and place orders smoothly. Built to offer a seamless and intuitive user experience. This project was developed as part of an internship task to demonstrate frontend proficiency and real-world usability.",
+    live: "https://react-food-order-app-swart.vercel.app/",
+    tech: ["React.js","JavaScript (ES6+)","HTML5","CSS3","Context API","Vercel (Deployment)"]
+  },
+  {
+    title: "URL Shortener Web App",
+    description: "A full-stack URL shortener that generates short links for long URLs, tracks click counts, and displays all shortened URLs with stats — built using Node.js, Express, MongoDB, and EJS.",
+    live: "https://url-shortner-vvaq.onrender.com",
+    tech: ["Node.js", "Express.js", "MongoDB", "EJS", "HTML5", "CSS3", "JavaScript"]
+
+  },
+
+
+
 ];
 
 const ProjectsSection = () => {
